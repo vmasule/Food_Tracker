@@ -6,6 +6,7 @@
 //  Copyright © 2015 Mastek. All rights reserved.
 //
 
+import UIKit
 import XCTest
 @testable import FoodTracker
 
@@ -33,4 +34,21 @@ class FoodTrackerTests: XCTestCase {
         }
     }
     
+    //MARK: FoodTracker tests
+    
+    func testMealInitialization(){
+    
+        //Success case
+        
+        let mealItem = Meal(name: "Meal Item", photo: nil, rating: 5)
+        
+        XCTAssertNotNil(mealItem)
+        
+        //Failed Test
+        
+        let noMealItem = Meal(name: "", photo: nil, rating: 0)
+    
+        XCTAssertNil(noMealItem)
+    }
 }
+    	
